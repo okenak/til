@@ -1,0 +1,19 @@
+# kubectl run test-pod --restart=Never --image=hello-world --dry-run=client -o yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+  labels:
+    env: test
+spec:
+  containers:
+  - image: hello-world
+    name: hello-world
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: "1"
+      requests:
+        memory: 256Mi
+        cpu: "0.2"
+  restartPolicy: Never
