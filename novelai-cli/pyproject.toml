@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novelai-cli"
+version = "0.1.0"
+description = "Simple CLI for NovelAI image generation"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+]
+
+[project.scripts]
+novelai-cli = "novelai_cli.cli:main"
